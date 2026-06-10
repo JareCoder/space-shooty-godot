@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var speed: int = 500
 
@@ -10,4 +10,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var dir = Input.get_vector("left", "right", "up", "down")
-	position += dir * speed * delta
+	velocity = dir * speed
+	move_and_slide()

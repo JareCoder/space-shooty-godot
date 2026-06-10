@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c4fm8qput7pre"]
+
+[ext_resource type="Texture2D" uid="uid://cndpdbasgktnl" path="res://Assets/PNG/Lasers/laserBlue01.png" id="1_r1bh0"]
+
+[sub_resource type="GDScript" id="GDScript_r1bh0"]
+script/source = "extends Area2D
+
+func _on_timer_timeout() -> void:
+	print(\"Meteor\")
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mou6w"]
+radius = 5.0
+height = 54.0
+
+[node name="Laser" type="Area2D" unique_id=298581798]
+collision_layer = 8
+collision_mask = 2
+script = SubResource("GDScript_r1bh0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=811151964]
+texture = ExtResource("1_r1bh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004422726]
+shape = SubResource("CapsuleShape2D_mou6w")
