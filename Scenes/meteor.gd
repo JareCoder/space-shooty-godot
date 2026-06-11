@@ -30,3 +30,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	collision.emit()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	# Only Area2D in the game is the laser so no need for extra checks. Remove that and this meteor.
+	area.queue_free()
+	queue_free()
