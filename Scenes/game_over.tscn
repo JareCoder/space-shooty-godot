@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://w1wimbl6c46i" path="res://Scenes/game_over.gd" id="1_ek8ke"]
 [ext_resource type="FontFile" uid="uid://bnw17kog7nysi" path="res://Assets/Fonts/kenvector_future.ttf" id="1_ojehl"]
 [ext_resource type="FontFile" uid="uid://ceiu1it6krn0l" path="res://Assets/Fonts/kenvector_future_thin.ttf" id="2_8fo1c"]
-[ext_resource type="AudioStream" uid="uid://br1b16ofjp3vi" path="res://Audio/sfx_lose.ogg" id="4_eoghk"]
+[ext_resource type="AudioStream" uid="uid://br1b16ofjp3vi" path="res://Audio/SFX/sfx_lose.ogg" id="4_eoghk"]
+[ext_resource type="AudioStream" uid="uid://fankdpirdj5w" path="res://Audio/Music/Calima - Usual Rigmarole.mp3" id="5_14u15"]
 
 [node name="GameOver" type="Control" unique_id=652175965]
 layout_mode = 3
@@ -71,4 +72,9 @@ text = "Press space to play again"
 
 [node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=204864574]
 stream = ExtResource("4_eoghk")
+autoplay = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1381766838]
+stream = ExtResource("5_14u15")
+volume_db = -25.0
 autoplay = true

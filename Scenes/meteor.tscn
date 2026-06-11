@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://sjr1uarl4er2" path="res://Assets/PNG/Meteors/big8.png" id="1_5civa"]
 [ext_resource type="Script" uid="uid://b7hqfukj0cerq" path="res://Scenes/meteor.gd" id="1_wm1ig"]
-[ext_resource type="AudioStream" uid="uid://10vcykllsyrw" path="res://Audio/sfx_laser2.ogg" id="3_bgiwl"]
+[ext_resource type="AudioStream" uid="uid://10vcykllsyrw" path="res://Audio/SFX/sfx_laser2.ogg" id="3_bgiwl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5civa"]
 radius = 43.046486
