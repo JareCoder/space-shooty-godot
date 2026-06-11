@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=777279606]
@@ -53,7 +53,6 @@ rotation = -3.1415925
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_tx1dd")
 autoplay = "default"
-frame_progress = 0.5004989
 
 [node name="PlayerImage" type="Sprite2D" parent="." unique_id=122622846]
 texture = ExtResource("1_v0iea")

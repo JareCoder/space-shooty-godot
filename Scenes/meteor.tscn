@@ -3,9 +3,25 @@
 [ext_resource type="Texture2D" uid="uid://sjr1uarl4er2" path="res://Assets/PNG/Meteors/big8.png" id="1_5civa"]
 [ext_resource type="Script" uid="uid://b7hqfukj0cerq" path="res://Scenes/meteor.gd" id="1_wm1ig"]
 [ext_resource type="AudioStream" uid="uid://10vcykllsyrw" path="res://Audio/SFX/sfx_laser2.ogg" id="3_bgiwl"]
+[ext_resource type="Texture2D" uid="uid://dtdc13lt1r8bd" path="res://Assets/PNG/Lasers/laserBlue08.png" id="4_7hap5"]
+[ext_resource type="Texture2D" uid="uid://dyeyria6eioa" path="res://Assets/PNG/Lasers/laserBlue09.png" id="6_kgtfb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5civa"]
 radius = 43.046486
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85ywr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_kgtfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7hap5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
 
 [node name="Meteor" type="Area2D" unique_id=1238857726]
 collision_layer = 2
@@ -22,5 +38,11 @@ shape = SubResource("CircleShape2D_5civa")
 stream = ExtResource("3_bgiwl")
 pitch_scale = 0.22
 
+[node name="DestroyAnimation" type="AnimatedSprite2D" parent="." unique_id=669884789]
+visible = false
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_85ywr")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="DestroyAnimation" to="." method="_on_destroy_animation_animation_finished"]

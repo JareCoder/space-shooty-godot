@@ -42,5 +42,11 @@ func _on_area_entered(area: Area2D) -> void:
 	$Sprite2D.hide()
 	can_collide = false
 	set_collision_mask(0)
+	$DestroyAnimation.visible = true
+	$DestroyAnimation.play()
 	await get_tree().create_timer(0.5).timeout
 	queue_free()
+
+
+func _on_destroy_animation_animation_finished() -> void:
+	$DestroyAnimation.visible = false
