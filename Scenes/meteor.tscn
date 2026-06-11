@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b7hqfukj0cerq" path="res://Scripts/meteor.gd" id="1_mekeu"]
 [ext_resource type="AudioStream" uid="uid://10vcykllsyrw" path="res://Audio/SFX/sfx_laser2.ogg" id="3_bgiwl"]
 [ext_resource type="Texture2D" uid="uid://dtdc13lt1r8bd" path="res://Assets/PNG/Lasers/laserBlue08.png" id="4_7hap5"]
+[ext_resource type="PackedScene" uid="uid://dqsrewq64svl0" path="res://Scenes/destroy_offscreen.tscn" id="6_d1487"]
 [ext_resource type="Texture2D" uid="uid://dyeyria6eioa" path="res://Assets/PNG/Lasers/laserBlue09.png" id="6_kgtfb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5civa"]
@@ -42,6 +43,8 @@ pitch_scale = 0.22
 visible = false
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_85ywr")
+
+[node name="DestroyOffscreen" parent="." unique_id=647634289 instance=ExtResource("6_d1487")]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

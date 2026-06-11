@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqsrewq64svl0"]
+
+[ext_resource type="Script" uid="uid://c3r7j57s3wrb3" path="res://Scripts/destroy_offscreen.gd" id="1_hnyrw"]
+
+[node name="DestroyOffscreen" type="Node" unique_id=647634289]
+script = ExtResource("1_hnyrw")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=931379166]
+scale = Vector2(2, 2)
