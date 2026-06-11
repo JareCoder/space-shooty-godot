@@ -4,15 +4,62 @@
 [ext_resource type="Texture2D" uid="uid://bm3jmme60mo8f" path="res://Assets/PNG/playerShip1_blue.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://w8xdg0xbhvyx" path="res://Audio/SFX/sfx_laser1.ogg" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://clod8nwujx5kv" path="res://Audio/SFX/sfx_twoTone.ogg" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://d02fl4ouvk6ju" path="res://Assets/PNG/Effects/fire01.png" id="5_3smsa"]
+[ext_resource type="Texture2D" uid="uid://ccun3h8kkkhyw" path="res://Assets/PNG/Effects/fire04.png" id="6_8erm5"]
+[ext_resource type="Texture2D" uid="uid://cgsyad51oyfhw" path="res://Assets/PNG/Effects/fire05.png" id="7_f1ek2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tx1dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3smsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8erm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f1ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8erm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f1ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3smsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8erm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f1ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8erm5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=777279606]
 collision_mask = 6
 script = ExtResource("1_cvnsp")
 
+[node name="FireAnimation" type="AnimatedSprite2D" parent="." unique_id=934063452]
+position = Vector2(0, 59)
+rotation = -3.1415925
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_tx1dd")
+autoplay = "default"
+frame_progress = 0.5004989
+
 [node name="PlayerImage" type="Sprite2D" parent="." unique_id=122622846]
 texture = ExtResource("1_v0iea")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=48238254]
+visible = false
 polygon = PackedVector2Array(-9, -39, 8, -40, 13, -15, 35, 1, 46, -10, 52, -9, 48, 25, 15, 28, 9, 40, -7, 40, -15, 28, -44, 25, -50, -6, -44, -7, -38, 1, -14, -13)
 
 [node name="LaserStartPos" type="Marker2D" parent="." unique_id=825970493]
